@@ -1,0 +1,59 @@
+{
+  "system": "[NEWWAY SYSTEM] — NWL Muse OmniVoice & Hyperframes 4 Standard Voice Profiles",
+  "drive_folder_id": "1uNSUIavqCemI2b9mZj6xCuNgC4h-KkW_",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1uNSUIavqCemI2b9mZj6xCuNgC4h-KkW_",
+  "voices": {
+    "vi": {
+      "male": {
+        "key": "vi_male_nhat_phong",
+        "name": "Nhất Phong",
+        "lang": "vi",
+        "gender": "male",
+        "style": "Narrative & Compelling (Giọng Nam Tiếng Việt chuẩn Bản tin & Hồ sơ năng lực Newway Logistics)",
+        "drive_id": "1ULKjxTqY2L0m2yRYP8hPfKOfh6Kjp5hC",
+        "orig_mp3": "voice_preview_nhật phong - narrative & compelling.mp3",
+        "wav_drive_id": "1EPQ2tDQzMv08AGnBZ6t_58pSXnLO1F_o",
+        "mp3_file": "nwl_voices/vi_male_nhat_phong.mp3",
+        "wav_file": "nwl_voices/vi_male_nhat_phong_24kHz.wav"
+      },
+      "female": {
+        "key": "vi_female_mai",
+        "name": "Mai",
+        "lang": "vi",
+        "gender": "female",
+        "style": "Natural, Bright & Authentic (Giọng Nữ Tiếng Việt tự nhiên, sáng, chuẩn Reels/TikTok/Shorts)",
+        "drive_id": "1uOTof5A8xZUGwEeMDiL6UyK2kAC-TRAN",
+        "orig_mp3": "voice_preview_mai - natural, bright and authentic.mp3",
+        "wav_drive_id": "1MG8am0wsdCmVe3nYRvdwmSU32uU4Siyc",
+        "mp3_file": "nwl_voices/vi_female_mai.mp3",
+        "wav_file": "nwl_voices/vi_female_mai_24kHz.wav"
+      }
+    },
+    "en": {
+      "male": {
+        "key": "en_male_adam",
+        "name": "Adam",
+        "lang": "en",
+        "gender": "male",
+        "style": "Radio Announcer (Giọng Nam Tiếng Anh chuẩn phát thanh quốc tế & tuyến vận tải Âu/Mỹ)",
+        "drive_id": "1gxyeZLpn2RVIp26Ny5IPcHXUx5OEZVJO",
+        "orig_mp3": "voice_preview_adam - radio announcer.mp3",
+        "wav_drive_id": "1l5L1fbR8t_uauSYUKM9AKuDvfo8BF1-p",
+        "mp3_file": "nwl_voices/en_male_adam.mp3",
+        "wav_file": "nwl_voices/en_male_adam_24kHz.wav"
+      },
+      "female": {
+        "key": "en_female_claire",
+        "name": "Claire",
+        "lang": "en",
+        "gender": "female",
+        "style": "Ultra Real & Natural (Giọng Nữ Tiếng Anh tự nhiên, hiện đại chuẩn Global Supply Chain)",
+        "drive_id": "1C1tHLH7B9WwQY-3GKIRs9EFPpfZYrb_Z",
+        "orig_mp3": "voice_preview_claire - ultra real & natural.mp3",
+        "wav_drive_id": "1vsrMyeTq2WZjLMnr1jIYChK-TaZKdVb3",
+        "mp3_file": "nwl_voices/en_female_claire.mp3",
+        "wav_file": "nwl_voices/en_female_claire_24kHz.wav"
+      }
+    }
+  }
+}

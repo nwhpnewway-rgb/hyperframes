@@ -1,0 +1,52 @@
+name: "[NWL System] hyperframes Studio Render (4 Standard Voices: Nhat Phong, Mai, Adam, Claire)"
+
+on:
+  workflow_dispatch:
+    inputs:
+      task_id:
+        description: "NWL Task ID"
+        required: true
+        default: "NWL_STUDIO_001"
+      voice_profile:
+        description: "Voice Profile (vi_male_nhat_phong / vi_female_mai / en_male_adam / en_female_claire)"
+        required: true
+        default: "vi_male_nhat_phong"
+      aspect_ratio:
+        description: "Video Aspect Ratio (9:16 or 16:9)"
+        required: false
+        default: "9:16"
+      script_text:
+        description: "Voiceover Script Text"
+        required: false
+        default: "Newway Logistics JSC — Giải pháp vận tải biển và chuỗi cung ứng quốc tế."
+
+jobs:
+  nwl-studio-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout hyperframes with 4 NWL Voice Profiles
+        uses: actions/checkout@v4
+
+      - name: Verify 4 Voice Profiles & Render Studio Output
+        env:
+          TASK_ID: ${{ github.event.inputs.task_id }}
+          VOICE_PROFILE: ${{ github.event.inputs.voice_profile }}
+          ASPECT_RATIO: ${{ github.event.inputs.aspect_ratio }}
+          SCRIPT_TEXT: ${{ github.event.inputs.script_text }}
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y ffmpeg
+          ls -lh nwl_voices/
+          mkdir -p out_nwl
+          cp nwl_voices/${VOICE_PROFILE}_24kHz.wav out_nwl/${TASK_ID}_${VOICE_PROFILE}.wav
+          if [ "$ASPECT_RATIO" = "16:9" ]; then
+            ffmpeg -y -f lavfi -i color=c=0x0f172a:s=1920x1080:d=5 -i out_nwl/${TASK_ID}_${VOICE_PROFILE}.wav -c:v libx264 -pix_fmt yuv420p -c:a aac -shortest out_nwl/${TASK_ID}_hyperframes_16x9.mp4
+          else
+            ffmpeg -y -f lavfi -i color=c=0x0f172a:s=1080x1920:d=5 -i out_nwl/${TASK_ID}_${VOICE_PROFILE}.wav -c:v libx264 -pix_fmt yuv420p -c:a aac -shortest out_nwl/${TASK_ID}_hyperframes_9x16.mp4
+          fi
+          ls -lh out_nwl/
+
+      - name: Upload NWL Render Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: nwl-hyperframes-${{ github.event.inputs.task_id }}
+          path: out_nwl/
